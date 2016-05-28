@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
+<head>
+<link href='http://meftun-demo.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://fonts.googleapis.com/css?family=Oswald&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+<title>Blogger Profesyonel Yazar Bilgi Kutusu</title>
+<style>
+.yazar-hakkinda{width:100%;}
+.yazarkutusu{overflow:hidden;background:#26292c;color:#ccc;padding:0;box-shadow:1px 3px 4px #bcbcbc;}
+.yazarkutusu .yazarinfo{color:#ccc;}
+.yazarkutusu .yazarsosyal{float:left;}
+.yazarkutusu .yazarsosyal li{list-style:none;position:relative;margin:0;}
+.yazarkutusu .yazarsosyal li a{width:32px;display:block;background:url(http://2.bp.blogspot.com/-5pVjrOEOM70/UxnR1nubmlI/AAAAAAAAACg/eIkJhgGfdoE/s1600/yazarkutusu_social_logo.png);height:32px;margin:0;}
+.yazarkutusu .yazarinfo img{float:left;border-radius:100%;width:17%;background:#fff;margin:4px 10px 4px 5px;padding:5px;}
+.yazarkutusu .yazarinfo p{font-size:18px;line-height:25px!important;font:15px 'Oswald', georgia, Arial;text-align:left;margin:0;padding:5px;}
+.yazarinfo p a{text-decoration:none;color:#1BC3F8;-webkit-transition:.5s;-moz-transition:.5s;-o-transition:.5s;-ms-transition:.5s;transition:.5s;padding:2px 4px;}
+.yazarinfo p a:hover{background:#2882b7;color:#fff;}
+h3.kutubasligi{background:#26292c;color:#fff;width:25%;text-align:center;font:17px 'Oswald', georgia, Arial;margin:0 auto;padding:2px 10px;}
+.yazarkutusu .yazarsosyal li .fb{background-position:0 0;}
+.yazarkutusu .yazarsosyal li .twitter{background-position:0 -32px;}
+.yazarkutusu .yazarsosyal li .google{background-position:0 -64px;}
+.yazarkutusu .yazarsosyal li .in{background-position:0 -96px;}
+.yazarkutusu .yazarsosyal li .in:hover{background-position:-32px -96px;}
+.yazarkutusu .yazarsosyal li .google:hover{background-position:-32px -64px;}
+.yazarkutusu .yazarsosyal li .twitter:hover{background-position:-32px -32px;}
+.yazarkutusu .yazarsosyal li .fb:hover{background-position:-32px 0;}
+.yazarkutusu:hover img{background:#1BC3F8;}
+.yazarkutusu .yazarinfo img,.yazarkutusu .yazarsosyal li a{-webkit-transition:.5s;-moz-transition:.5s;-ms-transition:.5s;-o-transition:.5s;transition:.5s;}
+#container{width:40%;margin:5em auto 2em;}
+#wrapper h2{background:#000;display:inline-block;color:#7D7D7D;border-radius:0 0 20px 20px;cursor:pointer;font-size:18px;font-family:'Oswald',georgia,arial;font-weight:400;text-shadow:0 1px 0 #fff;margin:0 auto;padding:5px 40px;box-shadow:1px 3px 4px #bcbcbc;}
+#wrapper{text-align:center;margin:0 auto;}
+body{background:#f1f1f1;margin:0 auto;}
+#wrapper h4{color:#7D7D7D;font:15px 'Oswald',georgia,arial;text-transform:uppercase;margin:20px 0;text-shadow:0 1px 0 #000;}
+.credit a{font:normal 14px 'Oswald', arial;text-decoration:none;background:orange;color:#fff;float:left;position:relative;left:-3.55em;-webkit-transition:.5s;-moz-transition:.5s;-ms-transition:.5s;-o-transition:.5s;transition:.5s;padding:5px 10px;}
+.credit a:hover{left:0;background:#000;padding-left:3em;}
+</style>
+</head>
+<body>
+<div id="wrapper">
+<h2>BLOGGER PROFESYONEL YAZAR BÝLGÝ KUTUSU</h2>
+<h4><span>Powered by </span>Meftun MEDE</h4>
+<div id="container">
+<div class="yazar-hakkinda">
+<h3 class="kutubasligi">YAZAR HAKKINDA</h3>
+<div class="yazarkutusu">
+<div class="yazarsosyal">
+  <li><a class="fb" href="https://www.facebook.com/meftunmede.blogger" rel="nofollow"></a></li>
+  <li><a class="twitter" href="https://twitter.com/MeftunMEDE" rel="nofollow"></a></li>
+  <li><a class="google" href="https://plus.google.com/113884753756003696845" rel="author"></a></li>
+  <li><a class="in" href="http://linkedin.com/in/meftunmede" rel="nofollow"></a></li>
+</div>
+  <div class="yazarinfo">
+<img src="https://lh5.googleusercontent.com/-TPWlwPLTf1U/T7Z6bFtxwyI/AAAAAAAAABc/eyHZ-WaELhU/w575-h720-no/269595_1877804941378_1128887957_31594530_4932394_n.jpg" alt="Author"/>
+<p>Filmler, Yemek tarifleri, programlar, Blogger eklentileri ve anlatýmlar, temalar, widgetler, Html kodlarý, her türlü konuda rehber adresiniz...<a href="http://meftunmede.blogspot.com">Devamýný Oku</a></p>
+</div>
+</div>
+</div></div>
+<div class="credit">
+  <a href="http://meftunmede.blogspot.com">&lt; Bloga Geri Dön</a>
+</div>
+</div>
+</body>
+</html>

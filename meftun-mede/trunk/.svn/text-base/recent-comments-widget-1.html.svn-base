@@ -1,0 +1,106 @@
+<html>
+<title>Blogger Son Yorumlar eklentisi | Meftun MEDE</title>
+<head>
+<link href='http://meftunmede.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link rel="stylesheet" type="text/css" href="http://meftun-mede.googlecode.com/svn/trunk/demo.css" />
+<style>
+body {
+   background: none;
+   font-family: arial;
+}
+body a {
+color: #27B;
+text-decoration: none;
+}
+#wrapper {
+     width: 300px!important;
+}
+.demobar {
+     float: right;
+     margin-bottom: 2em;
+}
+.mef_recent_comments li {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    border: 2px solid transparent;
+}
+.mef_recent_comments li:hover {
+    -webkit-transform: scale(1.2) translate(15px);
+    box-shadow: 0px 0px 20px 1px #aaa;
+}
+</style>
+</head>
+<body>
+<div class="demobar">
+<a class="demo" href="http://meftun-mede.googlecode.com/svn/trunk/recent-comments-widget-1.html">Style #1</a>
+<a class="demo" href="http://meftun-mede.googlecode.com/svn/trunk/recent-comments-widget-2.html">Style #2</a>
+<a class="demo" href="http://meftun-mede.googlecode.com/svn/trunk/recent-comments-widget-3.html">Style #3</a>
+</div>
+<div id="wrapper">
+<style type="text/css">
+ul.mef_recent_comments {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.mef_recent_comments li {
+    background: none!important;
+    margin: 5px!important;
+    padding: 5px!important;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    list-style: none;
+}
+.mef_recent_comments li .avatarImage {
+    padding: 3px;
+    background: #fefefe;
+    -webkit-box-shadow: 0 1px 1px #ccc;
+    -moz-box-shadow: 0 1px 1px #ccc;
+    box-shadow: 0 1px 1px #ccc;
+    float: left;
+    margin: 0 6px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+.avatarRound {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.mef_recent_comments li img {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+.mef_recent_comments li span {
+    margin-top: 3px;
+    color: #666;
+    display: block;
+    font-size: 12px;    line-height: 1.4;
+}
+</style>
+<script type="text/javascript">
+//<![CDATA[
+    // Recent Comments Settings
+    var
+	numComments 	= 5,
+	showAvatar 	= true,
+	avatarSize 	= 45,
+	roundAvatar	= true,
+	characters 	= 40,
+	showMorelink	= false,
+	moreLinktext	= "More ?",
+	defaultAvatar 	= "http://img1.blogblog.com/img/anon36.png",
+	hideCredits	= true;
+//]]>
+</script>
+<script type="text/javascript" src="http://meftun-mede.googlecode.com/files/blogger-recent-comments.js"></script>
+<script type="text/javascript" src="http://meftunmede.blogspot.com/feeds/comments/default?alt=json&callback=mef_recent_comments&max-results=5"></script>
+</div>
+</body>
+</html>

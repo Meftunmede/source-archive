@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href='http://meftun-demo.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+		<link href='http://fonts.googleapis.com/css?family=Oswald&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<title>Sürgülü In-Out Sosyal Paylaşım Eklentisi | MeftunMede.Blogspot.com</title>		
+<style type='text/css'>
+body{background:#f1f1f1;margin:0 auto;}
+h1{position:relative;display:block;background: url("http://3.bp.blogspot.com/-LSJ3N520eUY/UA8cgERhjpI/AAAAAAAAAII/2Z2i4wCMD8w/s1600/Angel-MEF.png") no-repeat scroll 20% 50% #ee1d20;font-size:40px;font-weight:400;text-align:center;font-family:oswald, Arial, Helvetica, sans-serif;text-shadow:5px 5px 0 #922222, 5px 5px 0 #666;color:#FFF;margin:0 auto;padding:10px;}
+#meffixedfootermain{z-index:999999;width:300px;height:0;position:fixed;bottom:0;right:5px;}
+#meffixedfooterdiv{border-top:3px solid #444;border-right:3px solid #444;border-left:3px solid #444;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;backgroundcolor:#d7d7d7;overflow:none;width:300px;height:250px;position:fixed;bottom:0;right:5px;background:#fff;background:-moz-linear-gradient(top, #fff 0%,#e5e5e5 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#e5e5e5));background:-webkit-linear-gradient(top, #fff 0%,#e5e5e5 100%);background:-o-linear-gradient(top, #fff 0%,#e5e5e5 100%);background:-ms-linear-gradient(top, #fff 0%,#e5e5e5 100%);background:linear-gradient(to bottom, #fff 0%,#e5e5e5100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0',endColorstr='#e5e5e5',GradientType=0 )}
+#meffixedfooterhide{z-index:999999;position:absolute;font-family:Oswald,Arial,Helvetica,sans-serif;bottom:250px;right:5px;width:285px;height:25px;cursor:pointer;background-color:#fff;padding-top:5px;border-top:3px solid #444;border-left:3px solid #444;border-right:3px solid #444;border-top-right-radius:5px;border-top-left-radius:5px;}
+#meffixedfootershow{position:absolute;bottom:0;right:5px;width:285px;height:25px;font-family:Oswald,Arial,Helvetica,sans-serif;cursor:pointer;background-color:#e5e5e5;padding-top:5px;border-top:3px solid #444;border-left:3px solid #444;border-right:3px solid #444;border-top-right-radius:5px;border-top-left-radius:5px;}
+.meffixedfooterdownarrow{width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #333;}
+.meffixedfooteruparrow{width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid #333;}
+.meffixedfooterblockarrow{width:8px;height:10px;background-color:#333;}
+#meffixedfootersocial{position:absolute;font-family:Oswald,Arial,Helvetica,sans-serif;bottom:220px;right:10px;width:280px;height:30px;float:right;}
+#meffixedfootersocialicon{position:absolute;font-family:Oswald,Arial,Helvetica,sans-serif;bottom:135px;left:10px;width:auto;height:64px;}
+#meffixedfooteremailsubscribe{position:absolute;bottom:64px;width:225px;height:15px;right:20px;padding:10px;left:20px;}
+.meffixedfooteremailsubscribebox input.email{font-family:Oswald,Arial,Helvetica,sans-serif;width:225px;font-size:12px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:7px 10px;}
+.meffixedfooteremailsubscribebox input.subscribe{-moz-box-shadow:inset 0 1px 0 0 #fff;-webkit-box-shadow:inset 0 1px 0 0 #fff;box-shadow:inset 0 1px 0 0 #fff;background-color:#f0f0f0;margin-top:5px;-moz-border-radius:6px;-webkit-border-radius:6px;width:249px;height:35px;border-radius:6px;border:1px solid #dcdcdc;display:inline-block;color:#777;font-family:Oswald,Arial,Helvetica,sans-serif;font-size:16px;font-weight:400;text-decoration:none;text-shadow:1px 1px 0 #fff;padding:2px;background:-webkit-gradient( linear,left top,left bottom,color-stop(0.05,#f0f0f0),color-stop(1,#c9c9c9) );background:-moz-linear-gradient( center top,#f0f0f0 5%,#c9c9c9 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0',endColorstr='#c9c9c9');}
+.meffixedfooteremailsubscribebox input.subscribe:hover{background-color:#c9c9c9;background:-webkit-gradient( linear,left top,left bottom,color-stop(0.05,#c9c9c9),color-stop(1,#f0f0f0) );background:-moz-linear-gradient( center top,#c9c9c9 5%,#f0f0f0 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9c9c9',endColorstr='#f0f0f0');background-color:#c9c9c9}
+p{font-family:Oswald,Arial,Helvetica,sans-serif;color:#000;}
+.mef a{text-decoration:none;font-family:Oswald,Arial,Helvetica,sans-serif;color:#1BC3F8;-webkit-transition:.5s;-moz-transition:.5s;-o-transition:.5s;-ms-transition:.5s;transition:.5s;padding:2px 4px;}
+.mef a:hover{background:#2882b7;font-family:Oswald,Arial,Helvetica,sans-serif;color:#fff;}
+</style>
+<h1>Sürgülü In-Out Sosyal Paylaşım Eklentisi</h1>
+<!--[if IE]>
+<style>
+.meffixedfooteremailsubscribebox input.subscribe{width:243px;margin-top:5px;}
+</style>
+<!--[if gte IE 9]>
+<style type="text/css">
+.gradient{filter:none;}
+</style>
+<![endif]-->
+<div id="meffixedfootermain">
+<center id="meffixedfootershow"onmouseup="document.getElementById('meffixedfooterdiv').style.display='block'">
+<table  style="margin-top:-2px;">
+<tr>
+<td>
+</center>
+<center style="color:#333;font-size:15px;font-weight:400;">
+Abonelik ve Sosyal Medya
+</center>
+</td>
+<td>
+<center>
+<div class="meffixedfooteruparrow">
+</div>
+<div class="meffixedfooterblockarrow">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</center>
+<div id="meffixedfooterdiv">
+<center id="meffixedfooterhide"onmouseup="document.getElementById('meffixedfooterdiv').style.display='none'">
+<table  style="margin-top:-2px;">
+<tr>
+<td>
+</center>
+<center style="color:#333;font-size:15px;font-weight:400;">
+Abonelik ve Sosyal Medya
+</center>
+</td>
+<td>
+<center>
+<div class="meffixedfooterblockarrow">
+</div>
+<div class="meffixedfooterdownarrow">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</center>
+<div id="meffixedfootersocial">
+<center style="color:#333;font-size:12px;">
+Tüm Son Ve Yeni Makaleler, İpuçları ve Widgetler, Harika Blogger Eklentileri E-mail Adresinize Gelsin.!!!
+</center>
+</div>
+<div id="meffixedfootersocialicon">
+<table>
+<tr>
+<td>
+<a href="https://www.facebook.com/meftunmede.blogger"><img height="48px"width="48px" title="Facebook'ta bizi beğenin" alt="Facebook" src="http://1.bp.blogspot.com/-tx_vF9eQ4-0/UDTfscLT45I/AAAAAAAABnc/xpo5WKfAR5M/s1600/Facebook+Icon.png" onmouseover="this.src='http://4.bp.blogspot.com/-631aVbpleX0/TwvJ8A-zbnI/AAAAAAAAAHw/gcAlGvLfJ_c/s1600/facebook_color_64x64.png'" onmouseout="this.src='http://1.bp.blogspot.com/-tx_vF9eQ4-0/UDTfscLT45I/AAAAAAAABnc/xpo5WKfAR5M/s1600/Facebook+Icon.png'" border="0"></a>
+<br />
+<a href="http://twitter.com/MeftunMede"><img height="48px"width="48px" title="Twitter'da Bizi Takip Edin" alt="Twitter" src="http://3.bp.blogspot.com/-xs-A-sxI5Rg/UDTfxKZSl5I/AAAAAAAABoM/4lSjbIAwLn4/s1600/Twitter+Icon.png" onmouseover="this.src='http://4.bp.blogspot.com/-Av3BgeByurw/UDTfxgVGqYI/AAAAAAAABoU/4BmnsYNK6JE/s1600/Twitter+Rollout+Image.png'" onmouseout="this.src='http://3.bp.blogspot.com/-xs-A-sxI5Rg/UDTfxKZSl5I/AAAAAAAABoM/4lSjbIAwLn4/s1600/Twitter+Icon.png'" border="0"></a>
+</td>
+<td width="75px"valign="top">
+<a style="font-size:12px;color:#333;font-weight:400;" href="https://www.facebook.com/meftunmede.blogger">Facebook'ta bizi beğenin</a>
+<br />
+<br />
+<a style="font-size:12px;color:#333;font-weight:400;" href="https://www.twitter.com/MeftunMede">Twitter'da Bizi Takip Edin</a>
+</td>
+<td>
+<a href="https://plus.google.com/111555326072108216342"><img height="48px"width="48px" title="Çevrelere ekle" alt="Google Plus" src="http://2.bp.blogspot.com/-N5kf9ym1mWk/UDTfvIvzklI/AAAAAAAABn8/jCexUi767Ko/s1600/Google+Icon.png" onmouseover="this.src='http://3.bp.blogspot.com/-viLihCxmAMo/UDTfvlGxnzI/AAAAAAAABoE/kfF_v8Rq_7U/s1600/Google+Rollout+Image.png'" onmouseout="this.src='http://2.bp.blogspot.com/-N5kf9ym1mWk/UDTfvIvzklI/AAAAAAAABn8/jCexUi767Ko/s1600/Google+Icon.png'" border="0"></a>
+<br />
+<a href="http://feeds.feedburner.com/MeftunMede">
+<img height="48px"width="48px" title="RSS Özet akışları aboneligi" alt="RSS" src="http://4.bp.blogspot.com/-1s1g_MazmMc/UDTftg_jb1I/AAAAAAAABns/2JhD1VYDYfc/s1600/Feedburner+Icon.png" onmouseover="this.src='http://4.bp.blogspot.com/-464885HODoE/UDTfuVzBYKI/AAAAAAAABn0/-yMgRXt2hUA/s1600/Feedburner+Rollout+Image.png'" onmouseout="this.src='http://4.bp.blogspot.com/-1s1g_MazmMc/UDTftg_jb1I/AAAAAAAABns/2JhD1VYDYfc/s1600/Feedburner+Icon.png'" border="0"></a>
+</td>
+<td valign="top">
+<a style="font-size:12px;color:#333;font-weight:400;" href="https://plus.google.com/111555326072108216342">
+Google+'da <br />Bizi Takip Edin</a>
+<br />
+<br />
+<a style="font-size:12px;color:#333;font-weight:400;" href="http://feeds.feedburner.com/MeftunMede">
+RSS Özet akışlarına<br />Abone olun</a>
+</td>
+</tr>
+</table>
+</div>
+<div id="meffixedfooteremailsubscribe">
+<div class="meffixedfooteremailsubscribebox">
+<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=MeftunMede','popupwindow','scrollbars=yes,width=550,height=520');return true"><input class="email" type="text" id="email" name="email" value="Buraya E-postanızı girin..." onfocus="if(this.value==this.defaultValue)this.value=&#39;&#39;;"onblur="if(this.value==&#39;&#39;)this.value=this.defaultValue;"/>
+<input type="hidden" value="MeftunMede" name="uri"/>
+<input type="hidden" name="loc" value="tr_TR"/>
+<input class="subscribe" name="commit" type="submit" value="E-Bülten'e şimdi abone olun"/>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+<div style='height:1600px; margin-top:400px; '>
+<a href="http://1.bp.blogspot.com/-rVsNPNHIX8E/UAgNcPyWbtI/AAAAAAAAAHo/-LczSB2OxCE/s400/Angel_Mef.png" imageanchor="0"><img src="http://1.bp.blogspot.com/-rVsNPNHIX8E/UAgNcPyWbtI/AAAAAAAAAHo/-LczSB2OxCE/s400/Angel_Mef.png" border="0"></a><br>
+<div class="mef a">
+<center><p>&#169; 2013 <a href='http://MeftunMede.Blogspot.com'>MeftunMede.Blogspot.com </a></p></center>
+</div>
+</div>
+</div>
+</body>
+</html>

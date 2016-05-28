@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href='http://meftun-demo.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+		<title>HTML kodlarıyla Resim Galerisi | Demo Page | MeftunMede.Blogspot.com</title>		
+<style type='text/css'>
+#broder{width:1074px;height:440px;background:#898989;position:relative;margin:30px auto 20px;}
+#slide{width:1000px;height:360px;overflow:hidden;position:absolute;left:40px;top:30px;background:#fff;border:0 solid #698639;border-color:#698639 #e0ebcb #e0ebcb #698639;}
+#slide a{text-decoration:none;display:block;width:1000px;height:360px;position:absolute;left:1080px;}
+#slide a img{display:block;border:0;}
+#title{width:131px;height:132px;position:absolute;left:5px;top:-30px;}
+#previous{width:74px;height:74px;background:url(http://3.bp.blogspot.com/-D8Wh9oESVZU/UT6DZnGDhTI/AAAAAAAAAO4/JFdM3FPMlx0/s1600/slide-left.png);position:absolute;left:5px;top:175px;cursor:pointer;}
+#next{width:74px;height:74px;background:url(http://1.bp.blogspot.com/-GSe_iHczPNU/UT6DZoeztoI/AAAAAAAAAO8/sz6NoI9k7pM/s1600/slide-right.png);position:absolute;left:1000px;top:175px;cursor:pointer;}
+#buttons{position:absolute;left:50px;top:405px;}
+#buttons div{width:20px;height:20px;background:url(http://2.bp.blogspot.com/-ikc4jpWK_K0/UT6DZlP3JMI/AAAAAAAAAPM/FX16BtoXwdQ/s1600/slide-button.gif);float:left;margin-right:5px;display:inline;}
+#buttons div b{display:block;width:20px;height:20px;line-height:19px;font-family:arial, sans-serif;font-size:11px;color:#16a;text-align:center;cursor:pointer;}
+img#loading{position:absolute;left:240px;top:170px;}
+#previous b,#next b{display:none;}
+h1 {position: relative;display: block;background-color: #898989;font-size: 30px;font-weight: 400;text-align: center;font-family:Georgia,Arial,Helvetica,sans-serif;text-shadow: 5px 5px 0px #16a, 5px 5px 0px rgb(102, 102, 102);color: rgb(255, 255, 255);margin: 0px auto;padding: 10px;}
+.bottom{font-size:11px;background:#fff;z-index:9999;position:fixed;box-shadow:1px 0 2px rgba(0,0,0,0.2);margin-top:auto;bottom:0;width:100%;text-align:left;padding:10px;}
+.bottom:span{letter-spacing:1px;color:#333;text-shadow:0 1px 1px #fff;display:block;float:left;text-decoration:none;font-family:Georgia, "Times New Roman", Times, serif;margin:0 10px;}
+.bottom a{color:#333;text-decoration:none;margin-right:10px;font-size:18px;}
+.bottom a:hover{background:#fff;color:#ee4e1d;}
+.bottom span.right{float:right;padding-right:10px;}
+.bottom span.right a{float:left;display:block;margin-right:15px;outline:none;}
+.Code1{clear:both;font-family:Courier;font-size:12px;line-height:1.4;background:url(http://2.bp.blogspot.com/-XWTd2tBfMVg/URO_xlf9j-I/AAAAAAAAANY/06wIuXuhdn0/s1600/MefCode1.png) left top repeat-x #9FCFFF;border-radius:5px;overflow-x:auto;display:block;overflow-wrap:break-word;border:#c4c4c4 solid 1px;color:#111;transition:background-color 1s ease-in-out;margin:1px 0 0;padding:20px 5px 5px;}
+.Code1:hover{background:url(http://4.bp.blogspot.com/-eOOUiQ0BLDo/URO_xpH-lmI/AAAAAAAAANc/BWP27Yvm72I/s1600/MefCode2.png) left top repeat-x #0c991a;color:#fff;}
+.Code2{font-family:Courier;font-size:14px;line-height:1.4;background-color:#9FCFFF;border-radius:5px;overflow-x:auto;display:block;overflow-wrap:break-word;border:#c4c4c4 solid 1px;color:#111;transition:background-color 1s ease-in-out;margin:0px;padding:10px 15px;}
+.Code2:hover{background-color:#0c991a;color:#fff;}
+.Code3{border:#c4c4c4 solid 1px;border-radius:5px;overflow:auto;font-family:"Trebuchet MS", sans-serif;font-size:14px;color:#111;background:#9FCFFF;margin:0px 0;padding:10px;}
+.Code1:active,.Code2:active{background-color:#F3BB5B;color:#000;}
+</style>
+<script src="http://social-media-dosyalari.googlecode.com/files/jquery-slider.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+current = 1;
+button = 1;
+images = 8;
+width = 1000;
+$('#p1').animate({"left": "0px"}, 400, "swing");
+$('#b1').css("backgroundPosition", "left bottom")
+$('#b1 b').css("color","#fff");
+$("#next").click(function() {
+button = current;
+current++
+if (current == (images+1) ) {current = 1}
+animateLeft(current,button)
+});
+$("#previous").click(function() {
+button = current;
+current--
+if (current == 0 ) {current = images}
+animateRight(current,button)
+});
+$("#buttons div").click(function() {
+button=current;
+clickButton = $(this).attr('id');
+current = parseInt(clickButton.slice(1));
+if (current > button) {animateLeft(current,button)}
+if (current < button) {animateRight(current,button)}
+});
+$("#buttons div b").mouseover(function() {
+if (($(this).css("color")) == "#16a" || ($(this).css("color")) == "rgb(17, 102, 170)") {$(this).css("color","#000");}
+});
+$("#buttons div b").mouseout(function() {
+if (($(this).css("color")) == "#000" || ($(this).css("color")) == "rgb(0, 0, 0)") {$(this).css("color","#16a");}
+});
+function animateLeft(current,button) {
+$('#p'+current).css("left",width +"px");
+$('#p'+current).animate({"left": "0px"}, 400, "swing");
+$('#p'+button).animate({"left": -width+"px"}, 400, "swing");
+setbutton()
+}
+function animateRight(current,button) {
+$('#p'+current).css("left",-width+"px");
+$('#p'+current).animate({"left": "0px"}, 400, "swing");
+$('#p'+button).animate({"left": width+"px"}, 400, "swing");
+setbutton()
+}
+function setbutton () {
+$('#b'+button).css("backgroundPosition", "left top")
+$('#b'+button+' b').css("color","#16a");
+$('#b'+current).css("backgroundPosition", "left bottom")
+$('#b'+current+' b').css("color","#fff");}});
+</script>
+</head>
+<body>
+<h1>HTML kodlarıyla Resim Galerisi | Demo Page</h1>
+<div id="broder">
+<div id="slide">
+<img alt="" id="loading" src="http://2.bp.blogspot.com/-BLReN523CAY/UT6Mlea2VhI/AAAAAAAAAQg/PVNrzTjOz5A/s1600/loading.gif" />
+
+<a href="https://lh3.googleusercontent.com/-8UWU6KC6Whg/UpKJb4OlSbI/AAAAAAAABjU/_ahabtnX2-o/s1000/Photo%25252021%252520Nov%2525202013%25252017%25253A13.jpg" id="p1"><img height="360" src="https://lh3.googleusercontent.com/-8UWU6KC6Whg/UpKJb4OlSbI/AAAAAAAABjU/_ahabtnX2-o/s1000/Photo%25252021%252520Nov%2525202013%25252017%25253A13.jpg" width="1000" title="Resim-1"/></a>
+
+<a href="http://3.bp.blogspot.com/-zdZqPva83t8/UMD9zxyBQ3I/AAAAAAAAEZM/IPXqfux0nso/s1600/Moolmanshoek2.jpg" id="p2"><img height="360" src="http://3.bp.blogspot.com/-zdZqPva83t8/UMD9zxyBQ3I/AAAAAAAAEZM/IPXqfux0nso/s1600/Moolmanshoek2.jpg" width="1000" title="Resim-2"/></a>
+
+<a href="http://2.bp.blogspot.com/-oDI267fDqIE/UlgJuMX_JbI/AAAAAAAAP5M/Mn65A2g4aiA/s1600/_MG_2724.JPG" id="p3"><img height="360" src="http://2.bp.blogspot.com/-oDI267fDqIE/UlgJuMX_JbI/AAAAAAAAP5M/Mn65A2g4aiA/s1600/_MG_2724.JPG" width="1000" title="Resim-3"/></a>
+
+<a href="http://3.bp.blogspot.com/-yK1g773ZgZY/Tz2un26PDmI/AAAAAAAABvo/2gvew42jx6k/s1600/santorini_villa_katikies_hotel_2.jpg" id="p4"><img height="360" src="http://3.bp.blogspot.com/-yK1g773ZgZY/Tz2un26PDmI/AAAAAAAABvo/2gvew42jx6k/s1600/santorini_villa_katikies_hotel_2.jpg" width="1000" title="Resim-4"/></a>
+
+<a href="http://1.bp.blogspot.com/-XbjNug2ti9Y/T7zmVtUcusI/AAAAAAAADXE/mMVvq9gP1KE/s1600/santorini_3.jpg" id="p5"><img height="360" src="http://1.bp.blogspot.com/-XbjNug2ti9Y/T7zmVtUcusI/AAAAAAAADXE/mMVvq9gP1KE/s1600/santorini_3.jpg" width="1000" title="Resim-5"/></a>
+
+<a href="http://2.bp.blogspot.com/-yhU1V5uZmXI/Uocf5BWJFqI/AAAAAAAAES8/vLz7NBeFOeg/s1600/G%C4%99sia+Szyja-_Panorama+15a.jpg" id="p6"><img height="360" src="http://2.bp.blogspot.com/-yhU1V5uZmXI/Uocf5BWJFqI/AAAAAAAAES8/vLz7NBeFOeg/s1600/G%C4%99sia+Szyja-_Panorama+15a.jpg" width="1000" title="Resim-6"/></a>
+
+<a href="http://2.bp.blogspot.com/-_2AnWLO_3A0/TlqRy-FGWaI/AAAAAAAADX8/HIqYUMxUgck/s1600/Tuchan280811_02Tuchan.jpg" id="p7"><img height="360" src="http://2.bp.blogspot.com/-_2AnWLO_3A0/TlqRy-FGWaI/AAAAAAAADX8/HIqYUMxUgck/s1600/Tuchan280811_02Tuchan.jpg" width="1000" title="Resim-7"/></a>
+
+<a href="http://1.bp.blogspot.com/-E6bVM4QnFCE/T6-f1jR5ZeI/AAAAAAAAE9U/MktnQJSHh0s/s1600/santorini_san_antonio_hotel_3.jpg" id="p8"><img height="360" src="http://1.bp.blogspot.com/-E6bVM4QnFCE/T6-f1jR5ZeI/AAAAAAAAE9U/MktnQJSHh0s/s1600/santorini_san_antonio_hotel_3.jpg" width="1000" title="Resim-8"/></a> </div>
+<div id="previous">
+<b>Önceki</b></div>
+<div id="next">
+<b>Sonraki</b></div>
+<div id="buttons">
+<div id="b1">
+<b>1</b></div>
+<div id="b2">
+<b>2</b></div>
+<div id="b3">
+<b>3</b></div>
+<div id="b4">
+<b>4</b></div>
+<div id="b5">
+<b>5</b></div>
+<div id="b6">
+<b>6</b></div>
+<div id="b7">
+<b>7</b></div>
+<div id="b8">
+<b>8</b></div>
+</div>
+</div>
+<p><strong> <span style="color: #666666; font-size: 16px; font-family: Georgia,'Times New Roman',serif; clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"> 
+HTML kodlarıyla Resim Galerisi 8 Resimli 1000X360 boyutlarında Demo</span></strong> <a style="font-family: Georgia,'Times New Roman',serif; clear: left; float: left; margin-bottom: 0em; margin-right: 1em;" href="javascript:history.go(-1)">&laquo; Geri git</a> <a style="font-family: Georgia,'Times New Roman',serif; clear: right; float: right; margin-bottom: 0em; margin-left: 1em;" href="http://MeftunMede.Blogspot.com">Anasayfa&raquo;</a></p>
+<div class="Code1">
+<pre class="source-code"><code>&lt;style&gt;
+#broder{width:<span style="color: red;">1074px</span>;height:<span style="color: red;">440px</span>;background:#898989;position:relative;margin:30px auto 20px;}
+#slide{width:<span style="color: red;">1000px</span>;height:<span style="color: red;">360px</span>;overflow:hidden;position:absolute;left:40px;top:30px;background:#fff;border:0 solid #698639;border-color:#698639 #e0ebcb #e0ebcb #698639;}
+#slide a{text-decoration:none;display:block;width:1000px;height:360px;position:absolute;left:1080px;}
+#slide a img{display:block;border:0;}
+#title{width:131px;height:132px;position:absolute;left:5px;top:-30px;}
+#previous{width:74px;height:74px;background:url(http://3.bp.blogspot.com/-D8Wh9oESVZU/UT6DZnGDhTI/AAAAAAAAAO4/JFdM3FPMlx0/s1600/slide-left.png);position:absolute;left:5px;top:175px;cursor:pointer;}
+#next{width:74px;height:74px;background:url(http://1.bp.blogspot.com/-GSe_iHczPNU/UT6DZoeztoI/AAAAAAAAAO8/sz6NoI9k7pM/s1600/slide-right.png);position:absolute;left:1000px;top:175px;cursor:pointer;}
+#buttons{position:absolute;left:50px;top:405px;}
+#buttons div{width:20px;height:20px;background:url(http://2.bp.blogspot.com/-ikc4jpWK_K0/UT6DZlP3JMI/AAAAAAAAAPM/FX16BtoXwdQ/s1600/slide-button.gif);float:left;margin-right:5px;display:inline;}
+#buttons div b{display:block;width:20px;height:20px;line-height:19px;font-family:arial, sans-serif;font-size:11px;color:#16a;text-align:center;cursor:pointer;}
+img#loading{position:absolute;left:240px;top:170px;}
+#previous b,#next b{display:none;}
+&lt;/style&gt;
+&lt;script src=&quot;http://social-media-dosyalari.googlecode.com/files/jquery-slider.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+current = 1;
+button = 1;
+images = <span style="color: red;">8</span>;
+width = <span style="color: red;">1000</span>;
+$('#p1').animate({&quot;left&quot;: &quot;0px&quot;}, 400, &quot;swing&quot;);
+$('#b1').css(&quot;backgroundPosition&quot;, &quot;left bottom&quot;)
+$('#b1 b').css(&quot;color&quot;,&quot;#fff&quot;);
+$(&quot;#next&quot;).click(function() {
+button = current;
+current++
+if (current == (images+1) ) {current = 1}
+animateLeft(current,button)
+});
+$(&quot;#previous&quot;).click(function() {
+button = current;
+current--
+if (current == 0 ) {current = images}
+animateRight(current,button)
+});
+$(&quot;#buttons div&quot;).click(function() {
+button=current;
+clickButton = $(this).attr('id');
+current = parseInt(clickButton.slice(1));
+if (current &gt; button) {animateLeft(current,button)}
+if (current &lt; button) {animateRight(current,button)}
+});
+$(&quot;#buttons div b&quot;).mouseover(function() {
+if (($(this).css(&quot;color&quot;)) == &quot;#16a&quot; &#124;&#124; ($(this).css(&quot;color&quot;)) == &quot;rgb(17, 102, 170)&quot;) {$(this).css(&quot;color&quot;,&quot;#000&quot;);}
+});
+$(&quot;#buttons div b&quot;).mouseout(function() {
+if (($(this).css(&quot;color&quot;)) == &quot;#000&quot; &#124;&#124; ($(this).css(&quot;color&quot;)) == &quot;rgb(0, 0, 0)&quot;) {$(this).css(&quot;color&quot;,&quot;#16a&quot;);}
+});
+function animateLeft(current,button) {
+$('#p'+current).css(&quot;left&quot;,width +&quot;px&quot;);
+$('#p'+current).animate({&quot;left&quot;: &quot;0px&quot;}, 400, &quot;swing&quot;);
+$('#p'+button).animate({&quot;left&quot;: -width+&quot;px&quot;}, 400, &quot;swing&quot;);
+setbutton()
+}
+function animateRight(current,button) {
+$('#p'+current).css(&quot;left&quot;,-width+&quot;px&quot;);
+$('#p'+current).animate({&quot;left&quot;: &quot;0px&quot;}, 400, &quot;swing&quot;);
+$('#p'+button).animate({&quot;left&quot;: width+&quot;px&quot;}, 400, &quot;swing&quot;);
+setbutton()
+}
+function setbutton () {
+$('#b'+button).css(&quot;backgroundPosition&quot;, &quot;left top&quot;)
+$('#b'+button+' b').css(&quot;color&quot;,&quot;#16a&quot;);
+$('#b'+current).css(&quot;backgroundPosition&quot;, &quot;left bottom&quot;)
+$('#b'+current+' b').css(&quot;color&quot;,&quot;#fff&quot;);}});
+&lt;/script&gt;
+&lt;div id=&quot;broder&quot;&gt;
+&lt;div id=&quot;slide&quot;&gt;
+&lt;img alt=&quot;&quot; id=&quot;loading&quot; src=&quot;http://2.bp.blogspot.com/-BLReN523CAY/UT6Mlea2VhI/AAAAAAAAAQg/PVNrzTjOz5A/s1600/loading.gif&quot; /&gt;
+&lt;a href=&quot;<span style="color: red;">http://1.bp.blogspot.com/-E6bVM4QnFCE/T6-f1jR5ZeI/AAAAAAAAE9U/MktnQJSHh0s/s1600/santorini_san_antonio_hotel_3.jpg</span>&quot; id=&quot;p1&quot;&gt;
+&lt;img height=&quot;<span style="color: red;">360</span>&quot; src=&quot;<span style="color: red;">http://1.bp.blogspot.com/-E6bVM4QnFCE/T6-f1jR5ZeI/AAAAAAAAE9U/MktnQJSHh0s/s1600/santorini_san_antonio_hotel_3.jpg</span>&quot; width=&quot;<span style="color: red;">1000</span>&quot; title=&quot;<span style="color: red;">Resim-1</span>&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;<span style="color: red;">http://3.bp.blogspot.com/-zdZqPva83t8/UMD9zxyBQ3I/AAAAAAAAEZM/IPXqfux0nso/s1600/Moolmanshoek2.jpg</span>&quot; id=&quot;p2&quot;&gt;
+&lt;img height=&quot;<span style="color: red;">360</span>&quot; src=&quot;<span style="color: red;">http://3.bp.blogspot.com/-zdZqPva83t8/UMD9zxyBQ3I/AAAAAAAAEZM/IPXqfux0nso/s1600/Moolmanshoek2.jpg</span>&quot; width=&quot;<span style="color: red;">1000</span>&quot; title=&quot;<span style="color: red;">Resim-2</span>&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;<span style="color: red;">http://2.bp.blogspot.com/-oDI267fDqIE/UlgJuMX_JbI/AAAAAAAAP5M/Mn65A2g4aiA/s1600/_MG_2724.JPG</span>&quot; id=&quot;p3&quot;&gt;
+&lt;img height=&quot;<span style="color: red;">360</span>&quot; src=&quot;<span style="color: red;">http://2.bp.blogspot.com/-oDI267fDqIE/UlgJuMX_JbI/AAAAAAAAP5M/Mn65A2g4aiA/s1600/_MG_2724.JPG</span>&quot; width=&quot;<span style="color: red;">1000</span>&quot; title=&quot;<span style="color: red;">Resim-3</span>&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;<span style="color: red;">http://3.bp.blogspot.com/-yK1g773ZgZY/Tz2un26PDmI/AAAAAAAABvo/2gvew42jx6k/s1600/santorini_villa_katikies_hotel_2.jpg</span>&quot; id=&quot;p4&quot;&gt;
+&lt;img height=&quot;<span style="color: red;">360</span>&quot; src=&quot;<span style="color: red;">http://3.bp.blogspot.com/-yK1g773ZgZY/Tz2un26PDmI/AAAAAAAABvo/2gvew42jx6k/s1600/santorini_villa_katikies_hotel_2.jpg</span>&quot; width=&quot;<span style="color: red;">1000</span>&quot; title=&quot;<span style="color: red;">Resim-4</span>&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;<span style="color: red;">http://1.bp.blogspot.com/-XbjNug2ti9Y/T7zmVtUcusI/AAAAAAAADXE/mMVvq9gP1KE/s1600/santorini_3.jpg</span>&quot; id=&quot;p5&quot;&gt;
+&lt;img height=&quot;<span style="color: red;">360</span>&quot; src=&quot;<span style="color: red;">http://1.bp.blogspot.com/-XbjNug2ti9Y/T7zmVtUcusI/AAAAAAAADXE/mMVvq9gP1KE/s1600/santorini_3.jpg</span>&quot; width=&quot;<span style="color: red;">1000</span>&quot; title=&quot;<span style="color: red;">Resim-5</span>&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;<span style="color: red;">http://2.bp.blogspot.com/-yhU1V5uZmXI/Uocf5BWJFqI/AAAAAAAAES8/vLz7NBeFOeg/s1600/G%C4%99sia+Szyja-_Panorama+15a.jpg</span>&quot; id=&quot;p6&quot;&gt;
+&lt;img height=&quot;<span style="color: red;">360</span>&quot; src=&quot;<span style="color: red;">http://2.bp.blogspot.com/-yhU1V5uZmXI/Uocf5BWJFqI/AAAAAAAAES8/vLz7NBeFOeg/s1600/G%C4%99sia+Szyja-_Panorama+15a.jpg</span>&quot; width=&quot;<span style="color: red;">1000</span>&quot; title=&quot;<span style="color: red;">Resim-6</span>&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;<span style="color: red;">http://2.bp.blogspot.com/-_2AnWLO_3A0/TlqRy-FGWaI/AAAAAAAADX8/HIqYUMxUgck/s1600/Tuchan280811_02Tuchan.jpg</span>&quot; id=&quot;p7&quot;&gt;
+&lt;img height=&quot;<span style="color: red;">360</span>&quot; src=&quot;<span style="color: red;">http://2.bp.blogspot.com/-_2AnWLO_3A0/TlqRy-FGWaI/AAAAAAAADX8/HIqYUMxUgck/s1600/Tuchan280811_02Tuchan.jpg</span>&quot; width=&quot;<span style="color: red;">1000</span>&quot; title=&quot;<span style="color: red;">Resim-7</span>&quot;/&gt;&lt;/a&gt;
+&lt;a href=&quot;<span style="color: red;">http://4.bp.blogspot.com/-9sx1x-wsYTc/UnH2DuBq8TI/AAAAAAAAfc0/worpup1cEYA/s1600/sauropodos.jpg</span>&quot; id=&quot;p8&quot;&gt;
+&lt;img height=&quot;<span style="color: red;">360</span>&quot; src=&quot;<span style="color: red;">http://4.bp.blogspot.com/-9sx1x-wsYTc/UnH2DuBq8TI/AAAAAAAAfc0/worpup1cEYA/s1600/sauropodos.jpg</span>&quot; width=&quot;<span style="color: red;">1000</span>&quot; title=&quot;<span style="color: red;">Resim-8</span>&quot;/&gt;&lt;/a&gt; &lt;/div&gt;
+&lt;div id=&quot;previous&quot;&gt;
+&lt;b&gt;&#214;nceki&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;next&quot;&gt;
+&lt;b&gt;Sonraki&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;buttons&quot;&gt;
+&lt;div id=&quot;b1&quot;&gt;
+&lt;b&gt;1&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;b2&quot;&gt;
+&lt;b&gt;2&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;b3&quot;&gt;
+&lt;b&gt;3&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;b4&quot;&gt;
+&lt;b&gt;4&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;b5&quot;&gt;
+&lt;b&gt;5&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;b6&quot;&gt;
+&lt;b&gt;6&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;b7&quot;&gt;
+&lt;b&gt;7&lt;/b&gt;&lt;/div&gt;
+&lt;div id=&quot;b8&quot;&gt;
+&lt;b&gt;8&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<div class="bottom">
+<span class="left">
+    		<a href="http://MeftunMede.Blogspot.com">MeftunMede.Blogspot.com</a>
+    	</span>
+    	<div class="clr"></div>
+    </div>
+</body>
+</html>
